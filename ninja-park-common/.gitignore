@@ -1,0 +1,19 @@
+*.iml
+*.ipr
+*.iws
+.factorypath
+.idea
+nb*
+/release.properties
+target
+
+# These are needed if running in IDE without properties set
+/ibderby
+derby.log
+/bin/
+
+# Eclipse specific files/directories
+.classpath
+.project
+.settings
+.metadata

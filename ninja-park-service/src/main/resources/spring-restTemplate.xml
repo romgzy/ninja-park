@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<!-- 使用httpclient的实现，带连接池 -->
+	<bean id="ninja.pollingConnectionManager"
+		class="org.apache.http.impl.conn.PoolingHttpClientConnectionManager">
+		<!--整个连接池的并发 -->
+		<property name="maxTotal" value="1000" />
+		<!--每个主机的并发 -->
+		<property name="defaultMaxPerRoute" value="1000" />
+	</bean>
+
+	<bean id="ninja.requestConfigBuilder" class="org.apache.http.client.config.RequestConfig.Builder">
+		<property name="connectionRequestTimeout" value="20000" />
+		<property name="connectTimeout" value="10000" />
+		<property name="socketTimeout" value="10000" />
+	</bean>
+
+	<bean id="ninja.httpClientBuilder" class="org.apache.http.impl.client.HttpClientBuilder"
+		factory-method="create">
+		<property name="connectionManager" ref="ninja.pollingConnectionManager" />
+		<!--开启重试 -->
+		<property name="retryHandler">
+			<bean class="org.apache.http.impl.client.DefaultHttpRequestRetryHandler">
+				<constructor-arg value="2" />
+				<constructor-arg value="true" />
+			</bean>
+		</property>
+		<property name="defaultRequestConfig">
+			<bean factory-bean="ninja.requestConfigBuilder" factory-method="build" />
+		</property>
+	</bean>
+
+	<bean id="ninja.httpClient" factory-bean="ninja.httpClientBuilder"
+		factory-method="build" />
+
+	<bean id="ninja.clientHttpRequestFactory"
+		class="org.springframework.http.client.HttpComponentsClientHttpRequestFactory">
+		<constructor-arg ref="mkt.httpClient" />
+	</bean>
+	
+	<bean id="ninja.bufferingClientHttpRequestFactory"
+		class="org.springframework.http.client.BufferingClientHttpRequestFactory">
+		<constructor-arg ref="ninja.clientHttpRequestFactory" />
+	</bean>
+
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+		<constructor-arg ref="ninja.clientHttpRequestFactory" />
+		<property name="errorHandler">
+			<bean class="org.springframework.web.client.DefaultResponseErrorHandler" />
+		</property>
+		<property name="messageConverters">
+			<list>
+				<bean class="org.springframework.http.converter.FormHttpMessageConverter" />
+				<ref bean="mkt.StringHttpMessageConverter" />
+				<ref bean="restJsonConverter" />
+			</list>
+		</property>
+		<property name="interceptors">
+			<list>
+				<bean class="org.calllight.es.examples.learning.service.demo.spring.resttemplate.LoggingRequestInterceptor" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="restJsonConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>application/json;charset=UTF-8</value>
+				<value>application/octet-stream;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="ninja.StringHttpMessageConverter"
+		class="org.springframework.http.converter.StringHttpMessageConverter">
+		<constructor-arg value="UTF-8"></constructor-arg>
+	</bean>
+
+</beans>
