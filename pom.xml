@@ -23,7 +23,7 @@
 		<powermock.version>1.6.5</powermock.version>
 		<nosqlunit.version>0.7.9</nosqlunit.version>
 		<mina.version>2.0.9</mina.version>
-		<netty.version>4.1.11.Final</netty.version>
+		<netty.version>4.1.42.Final</netty.version>
 		<dubbo.version>2.5.3</dubbo.version>
 		<velocity.version>1.7</velocity.version>
 		<velocity-tools.version>2.0</velocity-tools.version>
