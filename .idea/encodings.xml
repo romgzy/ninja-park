@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/ninja-park-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-dao/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-dao/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-domain/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-facade-impl/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-facade-impl/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-facade/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-facade/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-manager/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-manager/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-remote/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-remote/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-web/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-worker/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ninja-park-worker/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

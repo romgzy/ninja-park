@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ninja-park-facade-impl" />
+        <module name="ninja-park-sevice" />
+        <module name="ninja-park-common" />
+        <module name="ninja-park-domain" />
+        <module name="ninja-park-facade" />
+        <module name="ninja-park-web" />
+        <module name="ninja-park-worker" />
+        <module name="ninja-park-remote" />
+        <module name="ninja-park-dao" />
+        <module name="ninja-park-manager" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

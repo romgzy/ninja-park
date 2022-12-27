@@ -21,7 +21,10 @@ public class Test {
         System.out.println(Integer.toBinaryString(i)); 
         String[] unionCodes = ",00120170621000002".split(",");
         System.out.println(Arrays.toString(unionCodes)); 
-        
+        int j = 1 ,k=2;
+        System.out.println((j=k=3));
+        System.out.println(j);
+        System.out.println(k);
     }
 
 }
