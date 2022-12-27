@@ -28,7 +28,7 @@
 		<velocity.version>1.7</velocity.version>
 		<velocity-tools.version>2.0</velocity-tools.version>
 		<lucene.version>7.5.0</lucene.version>
-		<zookeeper.version>3.3.6</zookeeper.version>
+		<zookeeper.version>3.4.14</zookeeper.version>
 		<shiro.version>1.2.2</shiro.version>
 		<curator.version>1.1.10</curator.version>
 		<zkclient.version>0.1</zkclient.version>
